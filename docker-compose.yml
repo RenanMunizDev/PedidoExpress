@@ -1,0 +1,32 @@
+services:
+  pedidoapi:
+    build:
+      context: ./src/Pedido.API
+      dockerfile: Dockerfile
+    ports:
+      - "5000:8080"
+    depends_on:
+      - rabbitmq
+    networks:
+      - pedidoexpress
+
+  pedidoworker:
+    build:
+      context: ./src/Pedido.Worker
+      dockerfile: Dockerfile
+    depends_on:
+      - rabbitmq
+    networks:
+      - pedidoexpress
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    networks:
+      - pedidoexpress
+
+networks:
+  pedidoexpress:
+    driver: bridge
