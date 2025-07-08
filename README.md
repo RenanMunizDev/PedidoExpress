@@ -93,19 +93,6 @@ docker-compose up --build
 
 ---
 
-## 📸 Prints
-
-### Swagger
-![Swagger](./imgs/swagger.png)
-
-### Estrutura do Projeto
-![Estrutura](./imgs/estrutura.png)
-
-### Docker Compose
-![Docker](./imgs/docker.png)
-
----
-
 ## 🧪 Testes
 
 Projeto `Pedido.API.Tests` está sendo preparado para incluir testes de integração e testes unitários com xUnit.
